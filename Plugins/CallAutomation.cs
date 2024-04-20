@@ -31,14 +31,17 @@ public class CallAutomation
 
     [KernelFunction("Call")]
     [Description("make an api call and provide the name of the person to call and the message to send them")]
-    public async Task CallAsync(string name, string message)
+    public async Task CallAsync(CallAutomationModel model)
     {
-        var response = await _client.PostAsync($"CallAutomation/StartOutboundCall/customername/{name}/message/{message}/key/{_apiKey}", null).ConfigureAwait(false);
-        if(!response.IsSuccessStatusCode)
+        var response = await _client.PostAsync($"CallAutomation/StartOutboundCall/customername/{model.Name}/message/{model.Message}/key/{_apiKey}", null).ConfigureAwait(false);
+        if (!response.IsSuccessStatusCode)
         {
-            throw new Exception($"Failed to make call to {name}");
+            throw new Exception($"Failed to make call to {model.Name}");
         }
     }
-
-
+}
+public class CallAutomationModel
+{
+    public string Name { get; set; }
+    public string Message { get; set; }
 }
