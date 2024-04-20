@@ -1,0 +1,14 @@
+bin
+obj
+*.ini
+*.cache
+*.log
+*.tmp
+
+appsettings.Development.json
+appsettings.json
+/.vscode/extensions.json
+/.vscode/launch.json
+/.vscode/settings.json
+/.vscode/tasks.json
+/.vs/**

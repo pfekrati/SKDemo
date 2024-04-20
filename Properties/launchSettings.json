@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SKDemo": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
